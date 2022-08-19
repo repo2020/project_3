@@ -3,11 +3,9 @@ pipeline {
 
     stages {
         stage('Build') {
-		    when {
+            when {
                 anyOf {
-                    environment name: 'GIT_BRANCH', value: 'origin/ups_eks'
-                    environment name: 'GIT_BRANCH', value: 'origin/development'
-                    environment name: 'GIT_BRANCH', value: 'origin/master'
+                    environment name: 'GIT_BRANCH', value: 'origin/main'
                 }
             }
             steps {
