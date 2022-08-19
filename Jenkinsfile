@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Prod') {
             when {
                 anyOf {
                     environment name: 'GIT_BRANCH', value: 'origin/main'
@@ -12,23 +12,6 @@ pipeline {
                 echo 'Building..'
             }
         }
-        
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        
-        stage('Test_2') {
-            steps {
-                echo 'Testing.22.'
-            }
-        }        
-        
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+
     }
 }
